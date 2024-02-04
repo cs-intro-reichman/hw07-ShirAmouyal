@@ -51,7 +51,6 @@ public class SpellChecker {
 	
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		word=word.toLowerCase();
 		int minLev=threshold+1;
 		String minWord="";
 		for(int i=0;i<dictionary.length;i++){
@@ -62,10 +61,10 @@ public class SpellChecker {
 			}
 
 		}
-		if(minLev>=threshold){
-			return word;
+		if(minLev<=threshold){
+			return minWord;
 		}
-		return minWord;
+		return word;
 	}
 
 }

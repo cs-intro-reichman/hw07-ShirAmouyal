@@ -19,14 +19,19 @@ public class SpellChecker {
 		word2=word2.toLowerCase();
 		int a=word1.length();
 		int b=word2.length();
+		int lev1=0,lev2=0,lev3=0;
 		if (a==0){ return b;}
 		if(b==0){return a;}
 		if(word1.charAt(0)==word2.charAt(0)){
-			levenshtein(tail(word1), tail(word2));
+	    return levenshtein(tail(word1), tail(word2));
 		}
-		int lev1=levenshtein(tail(word1),word2);
-		int lev2=levenshtein(word1,tail(word2));
-		int lev3=levenshtein(tail(word1), tail(word2));
+		else{
+
+		 lev1=levenshtein(tail(word1),word2);
+		 lev2=levenshtein(word1,tail(word2));
+		 lev3=levenshtein(tail(word1), tail(word2));
+		}
+		
 		return Math.min(Math.min(lev1,lev2),lev3)+1;
 		
 		

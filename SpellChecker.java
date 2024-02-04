@@ -57,7 +57,7 @@ public class SpellChecker {
 			}
 
 		}
-		if(minLev< threshold){
+		if(minLev>=threshold){
 			return word;
 		}
 		return minWord;

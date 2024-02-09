@@ -24,9 +24,13 @@ public class HashTagTokenizer {
 		boolean found=false;
         for(int i=0;i<dictionary.length;i++){
 			if(dictionary[i].equals(word)){
+				/* why not just return true?
+				lets say that word = "a" then at the first iteration found becomes true
+				and you do 2999 iterations for nothing */ 
 				found=true;
 			}
 		}
+		// and if got to here then return false.
 		return found;
 	}
 

@@ -17,14 +17,16 @@ public class SpellChecker {
 	public static int levenshtein(String word1, String word2) {
 		word1=word1.toLowerCase();
 		word2=word2.toLowerCase();
-		int a=word1.length();
-		int b=word2.length();
+		int a=word1.length(); // bad naming
+		int b=word2.length(); // bad naming
 		int lev1=0,lev2=0,lev3=0;
 		if (a==0){ return b;}
 		if(b==0){return a;}
 		if(word1.charAt(0)==word2.charAt(0)){
 	    return levenshtein(tail(word1), tail(word2));
 		}
+			
+		//redundant else 	
 		else{
 
 		 lev1=levenshtein(tail(word1),word2);
